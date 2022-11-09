@@ -19,14 +19,11 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0'
+          dotnet-version: '3.1.301'
           include-prerelease: true
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
-
-      - name: Run tests
-        run: dotnet test
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
@@ -56,5 +53,5 @@ jobs:
         with:
           app-name: 'fis-azure-webapplab-aleksandra-rolka'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8A44E7717BF64AF788A3D00B408AECB4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C72FEB65236D4C5A91C10BBB22CC28E8 }}
           package: .
